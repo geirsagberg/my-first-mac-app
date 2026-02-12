@@ -38,6 +38,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         window.center()
         window.title = "My First Mac App"
         window.makeKeyAndOrderFront(nil)
+        window.orderFrontRegardless()
+        NSApp.activate(ignoringOtherApps: true)
 
         guard let contentView = window.contentView else { return }
 
@@ -70,5 +72,4 @@ let app = NSApplication.shared
 let delegate = AppDelegate()
 app.delegate = delegate
 app.setActivationPolicy(.regular)
-app.activate(ignoringOtherApps: true)
 app.run()
